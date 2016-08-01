@@ -1,0 +1,496 @@
+/* resets */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+ }
+ //clearfix
+ .clearfix::after {
+     content: " ";
+     zoom: 1;
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+     overflow: auto;
+ }
+ html[xmlns] .clearfix {
+     display: block;
+ }
+ * html .clearfix {
+     height: 1%;
+ }
+
+//Colors
+$rose: #f06;
+$white: #fff;
+$black: #000;
+$grey: #888;
+$dark-grey: #393939;
+$alto: #d8d8d8;
+$min-grey: $alto;
+
+@import "_fonts.scss";
+@import "_paddings.scss";
+@import "_margins.scss";
+@import "_grid.scss";
+@import "_mixins.scss";
+@import "_buttons.scss";
+@import "_media-queries.scss";
+
+
+.calco {
+    position: absolute;
+    z-index: 40;
+    top: 0;
+    left: -45px;
+    z-index: 10;
+}
+// Global
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+
+    font-family: 'Proxima Nova Regular', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.calcoLoco {
+    -webkit-filter: opacity(.5);
+    -moz-filter: opacity(.5);
+    filter: opacity(.5);
+    position: relative;
+    z-index: 20;
+}
+.body {
+    background-color: #eee;
+}
+hr {
+    margin: 0;
+}
+p {
+    margin: 0 0 10px 0;
+}
+
+.logo {
+    margin: 33px auto 33px;
+    display: block;
+}
+
+//
+.container {
+    background-color: $white;
+    @include border-radius(5px) ;
+    margin-bottom: 90px;
+    padding: 60px 34px 50px;
+}
+
+.top-title {
+    font-weight: 300;
+    font-variant: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: $dark-grey;
+    font-size: 32px;
+    margin-top: -5px;
+    margin-bottom: 23px;
+}
+
+hr.page-divider {
+    max-width: 770px;
+    height: 2px;
+    background-color: $min-grey;
+    margin: 0 auto;
+    border: none;
+    &.mt10 {
+        margin-top: 10px;
+    }
+}
+.title-lg {
+    font-size: 32;
+    font-weight: 600;
+}
+.plan-detail {
+    padding: 15px 12px 15px 15px;
+    .section-content {
+        border: {
+            left: 1px solid $min-grey;
+            right: 1px solid $min-grey;
+        }
+        margin: {
+            left: -15px;
+            top: -15px;
+            right: -15px;
+            bottom: -25px;
+        }
+        padding:{
+            top: 15px;
+            bottom: 25px;
+        }
+    }
+    .title {
+        font-size: 13px;
+        font-weight: 600;
+        color:$dark-grey;
+        text-align: center;
+        padding-top: 25px;
+        margin-bottom: 20px;
+    }
+    .items-list {
+        height: 110px;
+        color: $grey;
+        font-size: 14px;
+        text-align: center;
+        line-height: 16px;
+    }
+    .items-list-lg {
+        list-style-type: none;
+        color: $dark-grey;
+        font-size: 14px;
+        text-align: center;
+        li:first-child {
+            margin-top: 55px;
+        }
+        li {
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 27px;
+            .empty {
+
+            }
+        }
+
+    }
+    .dot {
+        color: $min-grey;
+        font-size: 50px;
+        line-height: 0;
+        height: 0px;
+        position: relative;
+        top: -10px;
+    }
+    hr.plan-detail-divider {
+        margin: 0 auto;
+        height: 2px;
+        width: 40px;
+    }
+    .includes-title {
+        color: $rose;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 25px;
+    }
+}
+.section-title {
+    font-size: 24px;
+    margin-top: 35px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 30px;
+}
+
+.box {
+    float: left;
+    .box-title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        margin-top: 0px;
+        margin-bottom: 18px;
+    }
+    hr.users-divider {
+        margin: 0 auto;
+        width: 80px;
+        background-color: $grey;
+        border: none;
+        height: 2px;
+    }
+    .users {
+        text-align: center;
+        margin-bottom: 15px;
+        .user-num, .user-quantity {
+            display: block;
+        }
+        .user-num {
+            margin-top: 18px;
+            font-size: 32px;
+            font-weight: 600;
+        }
+        .user-quantity {
+            font-weight: 400;
+            font-size: 16px;
+            margin-top: -20px;
+        }
+    }
+    .pricing {
+        text-align: left;
+        margin-top: 35px;
+        margin-left: 65px;
+        margin-bottom: 23px;
+        .price {
+            :checked + span {
+                font-size: 32px;
+                font-weight: 600;
+            }
+            .price-number {
+                font-size: 16px;
+                font-weight: 600;
+            }
+            &.top {
+                margin-bottom: 5px;
+            }
+        }
+    }
+    &.center {
+        height: 374px;
+        width: 350px;
+        background-color: $dark-grey;
+        color: $white;
+        .box-title {
+            margin-top: 52px;
+        }
+        .users {
+            .user-num {
+                margin-top: 18px;
+            }
+        }
+        .pricing {
+            margin: 48px 70px;
+            .price {
+                &.top {
+                    margin-top: -12px;
+                    margin-left: 15px;
+                }
+            }
+            .btn {
+                margin-top: 43px;
+            }
+        }
+    }
+    &.left, &.right {
+        padding-top: 25px;
+        padding-bottom: 30px;
+        height: 340px;
+        width: 280px;
+        background-color: $white;
+        color: $dark-grey;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        border: 2px solid $dark-grey;
+    }
+    &.left {
+        border-right: none;
+    }
+    &.right {
+        border-left: none;
+        .buttons {
+            margin-left: 35px;
+            margin-top: 69px;
+            .top {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.plan {
+    text-align: left;
+    padding-left: 80px;
+    color: $dark-grey;
+    .current {
+        margin-top: 18px;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    .days-trial {
+        font-size: 24px;
+        margin-top: -5px;
+        font-weight: 600;
+    }
+    .days-left {
+        margin-top: -5px;
+        font-size: 18px;
+        .days {
+            font-weight: 700;
+        }
+    }
+}
+.members {
+    padding-top: 53px;
+    padding-right: 80px;
+    text-align: right;
+    color: $grey;
+    font: {
+        size: 14px;
+        weight: 300;
+    }
+    .num-members {
+        color: $rose;
+    }
+    .bottom-text {
+        margin-top: -5px;
+    }
+}
+.title,
+.title-2,
+.subtitle {
+    color: $dark-grey;
+    text-align: center;
+}
+.title {
+    padding-top: 20px;
+    margin-bottom: 0px;
+}
+.title-2 {
+    margin-top: 17px;
+    margin-bottom: -3px;
+    font-size: 22px;
+    font-weight: 600;
+    .bold {
+        font-weight: 700;
+    }
+}
+.contact-info{
+
+}
+.subtitle {
+    margin-top: 10px;
+}
+
+input[type=range]::-ms-track {
+    width: 270px;
+    height: 8px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 4px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+
+input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+
+    /*fix for FF unable to apply focus style bug */
+    border: none;
+    border-color: #4C4C4C;
+    background-color: #4C4C4C;
+
+    /*required for proper track sizing in FF*/
+    height: 8px;
+    width: 270px;
+    @include border-radius(4px) ;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 270px;
+    height: 8px;
+    background: #4C4C4C;
+    border: none;
+    border-radius: 50%;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: $min-grey;
+    box-shadow: 2px 2px $black;
+    margin-top: -4px;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #4C4C4C;
+}
+
+input[type=range]::-moz-range-track {
+    width: 270px;
+    height: 8px;
+    background: #4C4C4C;
+    border: none;
+    border-radius: 4px;
+}
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: $min-grey;
+    box-shadow: 2px 2px $black;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+    width: 270px;
+    height: 5px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: red;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: green;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: $min-grey;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #4C4C4C;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #4C4C4C;
+}
+
+.slider-bar {
+    position: relative;
+    width: 271px;
+    height: 8px;
+    margin: -10px auto;
+    @include border-radius(4px);
+
+    .slider-circle {
+        cursor: pointer;
+        position: absolute;
+        top:-5px;
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        background-color: $min-grey;
+        box-shadow: 2px 2px $black;
+    }
+}

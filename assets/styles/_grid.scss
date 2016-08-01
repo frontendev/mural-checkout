@@ -1,0 +1,27 @@
+//sizes
+
+$full-width: 100%;
+$columns: 12 ;
+//Grid
+.column-12 {
+    width: 100%;
+    display: block;
+}
+.column-6 {
+    width: 50%;
+    float: left;
+
+}
+.column-4 {
+    width: $full-width / 3;
+    float: left;
+}
+
+//container
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: table;
+}
