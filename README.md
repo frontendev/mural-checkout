@@ -1,4 +1,3 @@
 # checkout-mural
-# checkout-mural
-# mural-checkout
-"# mural-checkout" 
+
+A beatiful checkout landing page
